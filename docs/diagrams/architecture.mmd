@@ -1,0 +1,31 @@
+flowchart TB
+  subgraph Field[Physical / simulation layer]
+    Sensors[IR · ultrasonic · reed switch]
+    RFID[RC522 RFID reader]
+    ESP[ESP32 or local device simulator]
+    Actuator[Servo · LEDs · buzzer]
+    Sensors --> ESP
+    RFID --> ESP
+    ESP --> Actuator
+  end
+  subgraph Service[Full-stack service layer]
+    API[Authenticated IoT REST API]
+    Gate[Gate state machine and command queue]
+    Auth[Role-based session and device authentication]
+    DB[(MySQL / Drizzle)]
+    API --> Gate
+    Gate --> DB
+    Auth --> API
+  end
+  subgraph Operations[Operations layer]
+    Live[WebSocket update channel]
+    UI[React monitoring dashboard]
+    Analytics[Audit logs and analytics]
+    DB --> Live
+    DB --> Analytics
+    Live --> UI
+    Analytics --> UI
+  end
+  ESP -->|Events and heartbeat| API
+  API -->|Queued commands| ESP
+  UI -->|Operator commands| Gate

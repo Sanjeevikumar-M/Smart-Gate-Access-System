@@ -1,0 +1,55 @@
+erDiagram
+  USERS ||--o{ RFID_CARDS : owns
+  USERS ||--o{ ACCESS_LOGS : receives
+  USERS ||--o{ GATE_EVENTS : acts_in
+  USERS ||--o{ GATE_COMMANDS : requests
+  DEVICES ||--o{ ACCESS_LOGS : records
+  DEVICES ||--o{ GATE_EVENTS : emits
+  DEVICES ||--o{ SENSOR_READINGS : produces
+  DEVICES ||--o{ GATE_COMMANDS : receives
+  USERS {
+    int id PK
+    string openId UK
+    enum role
+    enum status
+  }
+  RFID_CARDS {
+    int id PK
+    string rfidUid UK
+    int userId FK
+    enum status
+  }
+  DEVICES {
+    int id PK
+    string deviceId UK
+    string deviceTokenHash
+    enum status
+  }
+  ACCESS_LOGS {
+    int id PK
+    int userId FK
+    int deviceId FK
+    string rfidUid
+    enum result
+    datetime occurredAt
+  }
+  GATE_EVENTS {
+    int id PK
+    int deviceId FK
+    int actorUserId FK
+    string eventType
+    enum severity
+  }
+  SENSOR_READINGS {
+    int id PK
+    int deviceId FK
+    enum sensorType
+    string sensorValue
+  }
+  GATE_COMMANDS {
+    int id PK
+    int deviceId FK
+    int requestedByUserId FK
+    enum commandType
+    enum status
+  }

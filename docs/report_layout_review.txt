@@ -1,0 +1,12 @@
+Initial review of `docs/Smart_Gate_Access_Control_Project_Report_KGiSL.docx` on 19 August 2026:
+
+1. The cover page overflowed onto a second page because the title block and vertical spacing were too large.
+2. The Bonafide Certificate rendered correctly, but the next page was blank before the report body began.
+3. Corrective action planned: tighten cover-page spacing and prevent an extra page break before the first top-level heading generated from the markdown source.
+
+Final verification after regeneration:
+
+4. The cover page now fits on a single page with the KGiSL title block, candidate placeholder, degree placeholder, branch placeholder, institution name, and month/year placeholder.
+5. The Bonafide Certificate remains correctly placed on the next page.
+6. The Abstract begins immediately after the certificate without an extra blank page.
+7. The editable Word report is ready for delivery at `docs/Smart_Gate_Access_Control_Project_Report_KGiSL.docx`.

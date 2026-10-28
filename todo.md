@@ -1,0 +1,24 @@
+# Project TODO
+
+- [x] Document the data model, authorization boundaries, device contract, and safe gate state machine in SYSTEM_DESIGN.md.
+- [x] Implement the full Drizzle/MySQL schema for RFID cards, access logs, gate events, sensor readings, devices, gate commands, and configurable gate settings.
+- [x] Generate and apply the database migration SQL, then verify that the database schema is in sync with Drizzle.
+- [x] Extend user roles to Admin, Security Operator, and Registered User, with protected and role-gated backend procedures.
+- [x] Implement secure access authorization, RFID registration, user management, and audit logging.
+- [x] Implement a backend gate state machine with AUTO, OPEN, and CLOSED modes, an adjustable auto-close timeout, and safe command handling.
+- [x] Implement device authentication, heartbeat tracking, sensor-event ingestion, command polling, and fault/security-event detection.
+- [x] Provide administrator-controlled, one-time device-token rotation so external devices and the local simulator never use embedded credentials.
+- [x] Build a software IoT simulator that drives the same backend device contract as an ESP32, including all requested gate and security events.
+- [x] Implement live-update delivery with a WebSocket-compatible design and polling fallback for dashboard data.
+- [x] Seed realistic operational records for administrative users, operators, registered identities, RFID assignments, access events, alerts, sensor readings, and a device.
+- [x] Build an accessible responsive dashboard with KPI cards, an animated gate panel, access activity, alerts, device status, and manual gate controls.
+- [x] Build users, RFID registration, access log filtering, device monitoring, alerts, settings, and analytics screens.
+- [x] Implement Recharts-based analytics for access volumes, authorization outcome mix, hourly traffic, security-event distribution, and gate-open duration.
+- [x] Build an academic report interface following the KGiSL report order, with placeholders for candidate and supervisor information.
+- [x] Write a KGiSL-aligned academic report with seven chapters, diagrams, tables, abbreviations, appendices, and verifiable references.
+- [x] Add automated tests for authorization, role protection, RFID verification, gate state changes, security events, and simulator workflows.
+- [x] Verify the desktop and mobile dashboard, run tests and type checks, and document run and hardware-integration instructions.
+- [x] Extend the simulator to emit every required device event through the authenticated device API.
+- [x] Add demonstration sensor-reading records to the seeded operational dataset.
+- [x] Add automated coverage for a simulator workflow and verify its resulting records.
+- [x] Produce an editable Word report with the KGiSL cover, certificate, front matter, seven chapters, figures, appendices, and reference formatting.
